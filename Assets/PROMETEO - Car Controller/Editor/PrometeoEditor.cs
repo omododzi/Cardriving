@@ -75,50 +75,64 @@ public class PrometeoEditor : Editor{
   private SerializedProperty turnLeftButton;
   private SerializedProperty handbrakeButton;
 
-  private void OnEnable(){
-    prometeo = (PrometeoCarController)target;
-    SO = new SerializedObject(target);
+  private void OnEnable()
+{
+    if (target == null)
+    {
+        Debug.LogError("Target is null.");
+        return;
+    }
 
-    maxSpeed = SO.FindProperty("maxSpeed");
-    maxReverseSpeed = SO.FindProperty("maxReverseSpeed");
-    accelerationMultiplier = SO.FindProperty("accelerationMultiplier");
-    maxSteeringAngle = SO.FindProperty("maxSteeringAngle");
-    steeringSpeed = SO.FindProperty("steeringSpeed");
-    brakeForce = SO.FindProperty("brakeForce");
-    decelerationMultiplier = SO.FindProperty("decelerationMultiplier");
-    handbrakeDriftMultiplier = SO.FindProperty("handbrakeDriftMultiplier");
-    bodyMassCenter = SO.FindProperty("bodyMassCenter");
+    if (target is PrometeoCarController)
+    {
+        prometeo = (PrometeoCarController)target;
+        SO = new SerializedObject(target);
 
-    frontLeftMesh = SO.FindProperty("frontLeftMesh");
-    frontLeftCollider = SO.FindProperty("frontLeftCollider");
-    frontRightMesh = SO.FindProperty("frontRightMesh");
-    frontRightCollider = SO.FindProperty("frontRightCollider");
-    rearLeftMesh = SO.FindProperty("rearLeftMesh");
-    rearLeftCollider = SO.FindProperty("rearLeftCollider");
-    rearRightMesh = SO.FindProperty("rearRightMesh");
-    rearRightCollider = SO.FindProperty("rearRightCollider");
+        maxSpeed = SO.FindProperty("maxSpeed");
+        maxReverseSpeed = SO.FindProperty("maxReverseSpeed");
+        accelerationMultiplier = SO.FindProperty("accelerationMultiplier");
+        maxSteeringAngle = SO.FindProperty("maxSteeringAngle");
+        steeringSpeed = SO.FindProperty("steeringSpeed");
+        brakeForce = SO.FindProperty("brakeForce");
+        decelerationMultiplier = SO.FindProperty("decelerationMultiplier");
+        handbrakeDriftMultiplier = SO.FindProperty("handbrakeDriftMultiplier");
+        bodyMassCenter = SO.FindProperty("bodyMassCenter");
 
-    useEffects = SO.FindProperty("useEffects");
-    RLWParticleSystem = SO.FindProperty("RLWParticleSystem");
-    RRWParticleSystem = SO.FindProperty("RRWParticleSystem");
-    RLWTireSkid = SO.FindProperty("RLWTireSkid");
-    RRWTireSkid = SO.FindProperty("RRWTireSkid");
+        frontLeftMesh = SO.FindProperty("frontLeftMesh");
+        frontLeftCollider = SO.FindProperty("frontLeftCollider");
+        frontRightMesh = SO.FindProperty("frontRightMesh");
+        frontRightCollider = SO.FindProperty("frontRightCollider");
+        rearLeftMesh = SO.FindProperty("rearLeftMesh");
+        rearLeftCollider = SO.FindProperty("rearLeftCollider");
+        rearRightMesh = SO.FindProperty("rearRightMesh");
+        rearRightCollider = SO.FindProperty("rearRightCollider");
 
-    useUI = SO.FindProperty("useUI");
-    carSpeedText = SO.FindProperty("carSpeedText");
+        useEffects = SO.FindProperty("useEffects");
+        RLWParticleSystem = SO.FindProperty("RLWParticleSystem");
+        RRWParticleSystem = SO.FindProperty("RRWParticleSystem");
+        RLWTireSkid = SO.FindProperty("RLWTireSkid");
+        RRWTireSkid = SO.FindProperty("RRWTireSkid");
 
-    useSounds = SO.FindProperty("useSounds");
-    carEngineSound = SO.FindProperty("carEngineSound");
-    tireScreechSound = SO.FindProperty("tireScreechSound");
+        useUI = SO.FindProperty("useUI");
+        carSpeedText = SO.FindProperty("carSpeedText");
 
-    useTouchControls = SO.FindProperty("useTouchControls");
-    throttleButton = SO.FindProperty("throttleButton");
-    reverseButton = SO.FindProperty("reverseButton");
-    turnRightButton = SO.FindProperty("turnRightButton");
-    turnLeftButton = SO.FindProperty("turnLeftButton");
-    handbrakeButton = SO.FindProperty("handbrakeButton");
+        useSounds = SO.FindProperty("useSounds");
+        carEngineSound = SO.FindProperty("carEngineSound");
+        tireScreechSound = SO.FindProperty("tireScreechSound");
 
-  }
+        useTouchControls = SO.FindProperty("useTouchControls");
+        throttleButton = SO.FindProperty("throttleButton");
+        reverseButton = SO.FindProperty("reverseButton");
+        turnRightButton = SO.FindProperty("turnRightButton");
+        turnLeftButton = SO.FindProperty("turnLeftButton");
+        handbrakeButton = SO.FindProperty("handbrakeButton");
+    }
+    else
+    {
+        Debug.LogError("Target is not of type PrometeoCarController.");
+    }
+}
+
 
   public override void OnInspectorGUI(){
 

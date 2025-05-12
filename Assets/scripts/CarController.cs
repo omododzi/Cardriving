@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ExtremeCarController : MonoBehaviour
+public class CarController : MonoBehaviour
 {
     // Экстремальные настройки
     [Header("Extreme Performance")]
@@ -36,6 +36,10 @@ public class ExtremeCarController : MonoBehaviour
     public GameObject frontRightMesh;
     public GameObject rearLeftMesh;
     public GameObject rearRightMesh;
+    public ParticleSystem RLWParticleSystem;
+    public ParticleSystem RRWParticleSystem;
+    public TrailRenderer RLWTireSkid;
+    public TrailRenderer RRWTireSkid;
 
     // Приватные переменные
     private Rigidbody carRigidbody;
@@ -103,6 +107,7 @@ public class ExtremeCarController : MonoBehaviour
         UpdateCarData();
         ApplySteering(); // Добавляем вызов метода поворота колес
         AnimateWheelMeshes();
+        DriftCarPS();
     }
     void HandleInput()
     {
@@ -116,19 +121,11 @@ public class ExtremeCarController : MonoBehaviour
         }
         else if(Input.GetKey(KeyCode.S))
         {
-            CancelInvoke("DecelerateCar");
-            deceleratingCar = false;
-            throttleAxis = Mathf.Max(throttleAxis - Time.deltaTime * 5f, -1f); // Плавное увеличение обратного газа
-            ApplyThrottle(throttleAxis);
+            HyperBrake();
         }
-        else
+        else if(isTractionLocked)
         {
-            ThrottleOff();
-            if(!deceleratingCar)
-            {
-                InvokeRepeating("DecelerateCar", 0f, 0.1f);
-                deceleratingCar = true;
-            }
+            RecoverTraction();
         }
 
         // Управление рулем
@@ -153,6 +150,13 @@ public class ExtremeCarController : MonoBehaviour
         else if(isTractionLocked)
         {
             RecoverTraction();
+        }
+
+        // Дополнительное торможение при смене направления
+        if ((Input.GetKeyDown(KeyCode.W) && localVelocityZ < -1f) || (Input.GetKeyDown(KeyCode.S) && localVelocityZ > 1f))
+        {
+            ApplyBraking();
+            carRigidbody.linearVelocity = Vector3.Lerp(carRigidbody.linearVelocity, Vector3.zero, Time.deltaTime * 10f); // Быстрое сбрасывание скорости
         }
     }
     void ApplyThrottle(float throttleInput)
@@ -203,61 +207,51 @@ public class ExtremeCarController : MonoBehaviour
         localVelocityZ = transform.InverseTransformDirection(carRigidbody.linearVelocity).z;
     }
 
-    void HyperAccelerate()
+    public void DriftCarPS()
     {
-        // Система запуска с импульсом
-        if(carSpeed < 20f && throttleAxis > 0.9f && !isLaunching)
+        if (isDrifting)
         {
-            isLaunching = true;
-            launchTimer = 0f;
-            carRigidbody.AddForce(transform.forward * launchImpulseForce, ForceMode.Impulse);
+            RLWParticleSystem.Play();
+            RRWParticleSystem.Play();
+        }
+        else if (!isDrifting)
+        {
+            RLWParticleSystem.Stop();
+            RRWParticleSystem.Stop();
         }
         
-        float torque = accelerationMultiplier * 1000f * (isLaunching ? launchTorqueBoost : 1f);
-        
-        frontLeftCollider.motorTorque = torque;
-        frontRightCollider.motorTorque = torque;
-        rearLeftCollider.motorTorque = torque;
-        rearRightCollider.motorTorque = torque;
-        
-        // Быстрое нарастание газа
-        throttleAxis = Mathf.Min(throttleAxis + Time.deltaTime * 10f, 1f);
-        
-        // Контроль заноса
-        if(Mathf.Abs(localVelocityX) > 3f)
+        if ((isTractionLocked || Mathf.Abs(localVelocityX) > 5f) && Mathf.Abs(carSpeed) > 12f)
         {
-            isDrifting = true;
+            RLWTireSkid.emitting = true;
+            RRWTireSkid.emitting = true;
         }
         else
         {
-            isDrifting = false;
-        }
-        
-        if(isLaunching)
-        {
-            launchTimer += Time.deltaTime;
-            if(launchTimer >= launchDuration)
-            {
-                isLaunching = false;
-            }
+            RLWTireSkid.emitting = false;
+            RRWTireSkid.emitting = false;
         }
     }
+
     void ApplyBraking()
     {
         float targetBrakeForce = 0f;
-        
+
         if(isTractionLocked)
         {
             targetBrakeForce = brakeForce * 3f;
         }
         else if(localVelocityZ > 1f && Input.GetKey(KeyCode.S)) // Торможение при движении назад
         {
-            targetBrakeForce = brakeForce * 0.7f;
+            targetBrakeForce = brakeForce * 1.5f; // Увеличиваем тормозную силу
         }
-        
+        else if(localVelocityZ < -1f && Input.GetKey(KeyCode.W)) // Торможение при движении вперед
+        {
+            targetBrakeForce = brakeForce * 1.5f; // Увеличиваем тормозную силу
+        }
+
         // Плавное изменение силы торможения
         currentBrakeForce = Mathf.Lerp(currentBrakeForce, targetBrakeForce, Time.deltaTime * brakeSmoothing);
-        
+
         // Применяем торможение ко всем колесам
         frontLeftCollider.brakeTorque = currentBrakeForce;
         frontRightCollider.brakeTorque = currentBrakeForce;
