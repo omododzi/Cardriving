@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: db954c0526146e44daa69f57b6819d52
+timeCreated: 1512087838
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106250
+  packageName: School Bus, Simple
+  packageVersion: 1.1
+  assetPath: Assets/LB3D/Bus/Animations/Stop_Sign_1.controller
+  uploadId: 395861
