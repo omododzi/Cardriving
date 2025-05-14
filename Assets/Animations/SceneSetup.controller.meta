@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e95f4deb7c137774086495f0edd30776
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 259250
+  packageName: SCI-FI Armed Car
+  packageVersion: 1.0
+  assetPath: Assets/SCIFI_CAr_ARMED/Animations/SceneSetup.controller
+  uploadId: 597307

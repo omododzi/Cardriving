@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 63fa7afd16fe2d243bbaddaf7ff946ca
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 250030
+  packageName: '[FREE] Three Wheeled Car With Animations'
+  packageVersion: 1.0.0
+  assetPath: Assets/EK_Interactive_FirstCarsPack/Animations/EK_BaseModelMove.controller
+  uploadId: 676610

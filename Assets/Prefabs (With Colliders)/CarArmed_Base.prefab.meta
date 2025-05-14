@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 306c56503bf0b0f4284ad49376e86cb6
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 259250
+  packageName: SCI-FI Armed Car
+  packageVersion: 1.0
+  assetPath: Assets/SCIFI_CAr_ARMED/Prefabs/CarArmed_Base.prefab
+  uploadId: 597307
