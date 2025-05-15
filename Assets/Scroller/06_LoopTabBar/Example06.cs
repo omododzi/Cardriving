@@ -13,7 +13,7 @@ namespace FancyScrollView.Example06
     class Example06 : MonoBehaviour
     {
         [SerializeField] ScrollView scrollView = default;
-        [SerializeField] Text selectedItemInfo = default;
+        //[SerializeField] Text selectedItemInfo = default;
         [SerializeField] Window[] windows = default;
 
         Window currentWindow;
@@ -23,7 +23,7 @@ namespace FancyScrollView.Example06
             scrollView.OnSelectionChanged(OnSelectionChanged);
 
             var items = Enumerable.Range(0, windows.Length)
-                .Select(i => new ItemData($"Tab {i}"))
+                .Select(i => new ItemData($"Карта {i}"))
                 .ToList();
 
             scrollView.UpdateData(items);
@@ -32,7 +32,7 @@ namespace FancyScrollView.Example06
 
         void OnSelectionChanged(int index, MovementDirection direction)
         {
-            selectedItemInfo.text = $"Selected tab info: index {index}";
+            //selectedItemInfo.text = $"Selected tab info: index {index}";
 
             if (currentWindow != null)
             {
