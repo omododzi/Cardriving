@@ -13,7 +13,6 @@ namespace FancyScrollView.Example03
     {
         [SerializeField] Animator animator = default;
         [SerializeField] Text message = default;
-        [SerializeField] Text messageLarge = default;
         [SerializeField] Image image = default;
         [SerializeField] Image imageLarge = default;
         [SerializeField] Button button = default;
@@ -33,7 +32,6 @@ namespace FancyScrollView.Example03
             message.text = itemData.Message;
             image.sprite = itemData.Image;
             imageLarge.sprite = itemData.Page;
-            messageLarge.text = Index.ToString();
         }
 
         public override void UpdatePosition(float position)

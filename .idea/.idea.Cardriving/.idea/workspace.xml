@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7f09500e-e25f-4fd6-9226-4b48e85c05c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cardriving/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cardriving/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scroller/06_LoopTabBar/Example06.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scroller/06_LoopTabBar/Example06.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/Cell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/Cell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/Cell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/Example03.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/Example03.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,8 @@
       <updated>1747143582647</updated>
       <workItem from="1747143583810" duration="9770000" />
       <workItem from="1747247773420" duration="599000" />
-      <workItem from="1747334129235" duration="3748000" />
+      <workItem from="1747334129235" duration="4342000" />
+      <workItem from="1747342483087" duration="743000" />
     </task>
     <servers />
   </component>

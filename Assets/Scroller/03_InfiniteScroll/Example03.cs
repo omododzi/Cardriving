@@ -14,16 +14,15 @@ namespace FancyScrollView.Example03
     class Example03 : MonoBehaviour
     {
         [SerializeField] ScrollView scrollView = default;
-        [SerializeField]Sprite[] icons = Resources.LoadAll<Sprite>("Icons"); // Для Image
-        [SerializeField]Sprite[] pages = Resources.LoadAll<Sprite>("Pages"); // Для Page
+        [SerializeField]Sprite[] icons ; // Для Image
+        [SerializeField]Sprite[] pages ; // Для Page
+        [SerializeField] string[] names;
 
         void Start()
         {
-         
-    
-            var items = Enumerable.Range(0, 3)
+            var items = Enumerable.Range(0, 29)
                 .Select(i => new ItemData(
-                    $"Cell {i}", 
+                        names[i % icons.Length], 
                     icons[i % icons.Length],
                     pages[i % pages.Length]))
                 .ToArray();
