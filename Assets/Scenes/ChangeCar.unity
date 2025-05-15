@@ -330,7 +330,36 @@ MonoBehaviour:
   - {fileID: -745405202, guid: 80dc9bf34e4e1204aaa9bf5e073ccfe2, type: 3}
   - {fileID: -98997810, guid: a87fb1f7d2e66b244bef714b77e0a0f0, type: 3}
   - {fileID: 1074785847, guid: 32dab7b67ead5d04f954b8ee4f8c92ea, type: 3}
-  names: []
+  names:
+  - mustang
+  - old bus
+  - cafe  bus
+  - lada
+  - armed car
+  - tricycle
+  - F1
+  - camaro
+  - camaro
+  - camaro
+  - camaro
+  - camaro
+  - ice cream bus
+  - bus
+  - old car
+  - sport car
+  - samurai
+  - samurai
+  - samurai
+  - samurai
+  - samurai
+  - samurai
+  - samurai
+  - samurai
+  - samurai
+  - samurai
+  - samurai
+  - truck
+  - van
 --- !u!1 &777088603
 GameObject:
   m_ObjectHideFlags: 0
