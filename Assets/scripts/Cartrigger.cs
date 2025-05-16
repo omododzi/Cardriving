@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Cartrigger : MonoBehaviour
 {
+    public static int map;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Floor"))
@@ -13,7 +14,17 @@ public class Cartrigger : MonoBehaviour
 
         if (other.CompareTag("Destroy"))
         {
-            SceneManager.LoadScene("Map1");
+            if (map == 1)
+            {
+                SceneManager.LoadScene("Map1");
+            }else if (map == 2)
+            {
+                SceneManager.LoadScene("Map2");
+            }else if (map == 3)
+            {
+                SceneManager.LoadScene("Map3");
+            }
+            
         }
     }
 
