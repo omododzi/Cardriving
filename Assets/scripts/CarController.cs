@@ -62,8 +62,15 @@ private bool isDrifting;                // Флаг заноса
 private bool isTractionLocked;          // Флаг блокировки сцепления (ручник)
 private float carSpeed;                 // Текущая скорость (км/ч)
 
+public AudioSource carEngineSound; // This variable stores the sound of the car engine.
+public AudioSource tireScreechSound; // This variable stores the sound of the tire screech (when the car is drifting).
+float initialCarEngineSoundPitch; // Used to store the initial pitch of the car engine sound.
+
     void Start()
     {
+        if(carEngineSound != null){
+            initialCarEngineSoundPitch = carEngineSound.pitch;
+        }
         carRigidbody = GetComponent<Rigidbody>();
         carRigidbody.centerOfMass = bodyMassCenter;
         
@@ -72,6 +79,7 @@ private float carSpeed;                 // Текущая скорость (км
         
         // Увеличенное сцепление для лучшего разгона
         IncreaseGrip();
+        InvokeRepeating("CarSounds", 0f, 0.1f);
     }
 
     void SetupSuspension(float distance, float spring, float damper)
@@ -105,6 +113,7 @@ private float carSpeed;                 // Текущая скорость (км
         frontRightCollider.forwardFriction = forwardFriction;
         rearLeftCollider.forwardFriction = forwardFriction;
         rearRightCollider.forwardFriction = forwardFriction;
+        
     }
 
     void Update()
@@ -273,6 +282,38 @@ private float carSpeed;                 // Текущая скорость (км
             Debug.LogWarning(ex);
         }
     }
+    public void CarSounds()
+    {
+        if(carEngineSound != null)
+        {
+            float engineSoundPitch = initialCarEngineSoundPitch + (Mathf.Abs(carRigidbody.linearVelocity.magnitude) / 25f);
+            carEngineSound.pitch = engineSoundPitch;
+        
+            if(!carEngineSound.isPlaying)
+            {
+                carEngineSound.Play();
+            }
+        }
+
+        if(tireScreechSound != null)
+        {
+            if((isDrifting) || (isTractionLocked && Mathf.Abs(carSpeed) > 12f))
+            {
+                if(!tireScreechSound.isPlaying)
+                {
+                    tireScreechSound.Play();
+                }
+            }
+            else
+            {
+                if(tireScreechSound.isPlaying)
+                {
+                    tireScreechSound.Stop();
+                }
+            }
+        }
+    }
+
     void ApplyBraking()
     {
         if (isTractionLocked)

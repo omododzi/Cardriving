@@ -9,7 +9,7 @@ public class SpawnCar : MonoBehaviour
 
     void Start()
     {
-        Instantiate(spawnCars[ClicCar.index], spawnpos.position, Quaternion.identity);
+        Instantiate(spawnCars[ClicCar.index], spawnpos.position, spawnpos.rotation);
     }
 
     public void ResetCar()
