@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f09500e-e25f-4fd6-9226-4b48e85c05c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cardriving/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cardriving/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs (With Colliders)/ARCADE - FREE Racing Car.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs (With Colliders)/ARCADE - FREE Racing Car.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs (With Colliders)/CarArmed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs (With Colliders)/CarArmed.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/ClicCar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/ClicCar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/SpawnCar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/SpawnCar.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7f09500e-e25f-4fd6-9226-4b48e85c05c4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +94,7 @@
       <workItem from="1747334129235" duration="4342000" />
       <workItem from="1747342483087" duration="929000" />
       <workItem from="1747404636073" duration="3254000" />
-      <workItem from="1747421018917" duration="1150000" />
+      <workItem from="1747421018917" duration="1464000" />
     </task>
     <servers />
   </component>
