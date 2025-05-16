@@ -1,16 +1,19 @@
+using System;
 using FancyScrollView.Example03;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class SpawnCar : MonoBehaviour
 {
-    public GameObject cellPrefab;
-    private ClicCar cliccar;
     public GameObject[] spawnCars;
-    public GameObject spawnpos;
+    public Transform spawnpos;
 
     void Start()
     {
-        cliccar = cellPrefab.GetComponent<ClicCar>();
-        Instantiate(spawnCars[cliccar.index], spawnpos.transform.position, Quaternion.identity);
+        Instantiate(spawnCars[ClicCar.index], spawnpos.position, Quaternion.identity);
+    }
+
+    public void ResetCar()
+    {
+        SceneManager.LoadScene("ChangeCar");
     }
 }

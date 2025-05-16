@@ -2,73 +2,90 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-   private Transform target;
-   public Vector3 offset;
-   [Range(0.1f, 50f)] // Уменьшил максимальное значение
-   public float followSpeed = 2f;
+    private Transform target;
+    public Vector3 offset = new Vector3(0f, 2f, -5f);
+    
+    [Header("Follow Settings")]
+    [Range(0.1f, 10f)]
+    public float followSpeed = 5f;
+    
+    [Header("Rotation Settings")]
+    [Range(0.1f, 5f)]
+    public float rotationSpeed = 1f;
+    
+    [Header("Smoothing")]
+    [Range(0.01f, 0.5f)]
+    public float positionSmoothTime = 0.1f;
+    
+    public float lookAtHeightOffset = 0.5f;
 
-   [Tooltip("Скорость поворота")]
-   [Range(0.1f, 5f)] // Уменьшил максимальное значение
-   public float rotationSpeed = 1f;
+    private Vector3 velocity = Vector3.zero;
+    private bool targetFound = false;
 
-   [Header("Advanced")]
-   [Tooltip("Сглаживание движения")]
-   [Range(0.1f, 1f)] // Увеличил минимальное значение
-   public float smoothTime = 1f;
+    void Start()
+    {
+        FindTarget();
+    }
 
-   [Tooltip("Смотреть немного выше цели")]
-   public float lookAtHeightOffset = 0.5f;
+    void LateUpdate()
+    {
+        if (!targetFound || target == null)
+        {
+            FindTarget();
+            return;
+        }
 
-   private Vector3 velocity = Vector3.zero;
+        FollowTarget();
+        RotateTowardsTarget();
+    }
 
-   void Start()
-   {
-       // Назначаем цель один раз при старте
-       target = GameObject.FindGameObjectWithTag("Player").transform;
-       if (target == null)
-       {
-           Debug.LogWarning("Target not assigned for camera follow!");
-       }
-   }
+    private void FindTarget()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            target = player.transform;
+            targetFound = true;
+            
+            // Устанавливаем начальную позицию камеры
+            transform.position = target.position + offset;
+            transform.LookAt(target.position + Vector3.up * lookAtHeightOffset);
+        }
+    }
 
-   void LateUpdate()
-   {
-       if (target == null)
-       {
-           Debug.LogWarning("Target not assigned for camera follow!");
-           return;
-       }
+    private void FollowTarget()
+    {
+        Vector3 desiredPosition = target.position + 
+                                target.right * offset.x + 
+                                target.up * offset.y + 
+                                target.forward * offset.z;
 
-       // Вычисляем желаемую позицию с учетом смещения
-       Vector3 desiredPosition = target.position +
-                                 target.right * offset.x +
-                                 target.up * offset.y +
-                                 target.forward * offset.z;
+        transform.position = Vector3.SmoothDamp(
+            transform.position,
+            desiredPosition,
+            ref velocity,
+            positionSmoothTime,
+            Mathf.Infinity, // Макс. скорость - без ограничений
+            Time.deltaTime
+        );
+    }
 
-       // Плавное перемещение к позиции
-       transform.position = Vector3.SmoothDamp(
-           transform.position,
-           desiredPosition,
-           ref velocity,
-           smoothTime,
-           followSpeed
-       );
+    private void RotateTowardsTarget()
+    {
+        Vector3 lookAtPoint = target.position + Vector3.up * lookAtHeightOffset;
+        Vector3 direction = lookAtPoint - transform.position;
+        
+        // Используем SmoothDamp и для вращения (более плавно)
+        Quaternion desiredRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            desiredRotation,
+            rotationSpeed * Time.deltaTime
+        );
+    }
 
-       // Вычисляем точку для взгляда (немного выше цели)
-       Vector3 lookAtPoint = target.position + Vector3.up * lookAtHeightOffset;
-
-       // Плавный поворот к цели
-       Quaternion desiredRotation = Quaternion.LookRotation(lookAtPoint - transform.position);
-       transform.rotation = Quaternion.Slerp(
-           transform.rotation,
-           desiredRotation,
-           rotationSpeed * Time.deltaTime
-       );
-   }
-
-   // Метод для ручного изменения смещения (например, при смене вида)
-   public void SetOffset(Vector3 newOffset)
-   {
-       offset = newOffset;
-   }
+    public void SetOffset(Vector3 newOffset)
+    {
+        offset = newOffset;
+    }
 }

@@ -6,7 +6,7 @@ public class ClicCar : MonoBehaviour
 {
    private Cell cell;
    public static List<bool> carchanged = new List<bool>(){false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
-   public int index;
+   public static int index;
    void Start()
    {
       cell = GetComponentInParent<Cell>();
