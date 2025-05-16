@@ -1,3 +1,4 @@
+using FancyScrollView.Example03;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MapManager : MonoBehaviour

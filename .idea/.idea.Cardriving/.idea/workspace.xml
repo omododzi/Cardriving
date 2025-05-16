@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f09500e-e25f-4fd6-9226-4b48e85c05c4" name="Changes" comment="" />
+    <list default="true" id="7f09500e-e25f-4fd6-9226-4b48e85c05c4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cardriving/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cardriving/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChangeCar.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChangeCar.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/Cell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/Cell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/Example03.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scroller/03_InfiniteScroll/Example03.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/CarManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/CarManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Lerning.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Lerning.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/MapManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/MapManager.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,6 +103,7 @@
       <workItem from="1747247773420" duration="599000" />
       <workItem from="1747334129235" duration="4342000" />
       <workItem from="1747342483087" duration="929000" />
+      <workItem from="1747404636073" duration="3254000" />
     </task>
     <servers />
   </component>

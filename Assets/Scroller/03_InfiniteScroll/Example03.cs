@@ -16,7 +16,7 @@ namespace FancyScrollView.Example03
         [SerializeField] ScrollView scrollView = default;
         [SerializeField]Sprite[] icons ; // Для Image
         [SerializeField]Sprite[] pages ; // Для Page
-        [SerializeField] string[] names;
+        [SerializeField] public string[] names;
 
         void Start()
         {
