@@ -151,7 +151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 108, y: 3}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &650160435
@@ -338,26 +338,26 @@ MonoBehaviour:
   - armed car
   - tricycle
   - F1
-  - "camaro \u0436"
-  - "camaro \u0421"
-  - "camaro \u0411"
-  - "camaro \u0424"
-  - "camaro \u041A"
+  - camaro 1
+  - camaro 2
+  - camaro 3
+  - camaro 4
+  - camaro 5
   - ice cream bus
   - bus
   - old car
   - sport car
-  - "samurai \u0427"
-  - "samurai \u0421"
-  - "samurai \u0421\u0427"
-  - "samurai \u0422\u0421"
-  - "samurai \u0422\u0421\u0427"
-  - "samurai \u0417"
-  - "samurai \u0417\u0427"
-  - "samurai \u041A"
-  - "samurai \u0422\u041A"
-  - "samurai \u0416"
-  - "samurai \u0416\u041A"
+  - samurai 1
+  - samurai 2
+  - samurai 3
+  - samurai 4
+  - samurai 5
+  - samurai 6
+  - samurai 7
+  - samurai 8
+  - samurai 9
+  - samurai 10
+  - samurai 11
   - truck
   - van
 --- !u!1 &777088603
