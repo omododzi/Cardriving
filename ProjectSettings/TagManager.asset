@@ -8,6 +8,7 @@ TagManager:
   - Destroy
   - Spheare
   - Items
+  - Windows
   layers:
   - Default
   - TransparentFX
