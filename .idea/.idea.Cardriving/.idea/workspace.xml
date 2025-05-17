@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="7f09500e-e25f-4fd6-9226-4b48e85c05c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cardriving/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cardriving/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/canvas/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/canvas/New Material.mat" afterDir="false" />
@@ -24,6 +25,9 @@
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
+=======
+    <list default="true" id="7f09500e-e25f-4fd6-9226-4b48e85c05c4" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +119,11 @@
       <workItem from="1747404636073" duration="3254000" />
       <workItem from="1747421018917" duration="1464000" />
       <workItem from="1747430712524" duration="1484000" />
+<<<<<<< Updated upstream
       <workItem from="1747514130393" duration="3695000" />
+=======
+      <workItem from="1747511477819" duration="1165000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
