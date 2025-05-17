@@ -16,6 +16,7 @@ namespace FancyScrollView.Example03
         [SerializeField] Image image = default;
         [SerializeField] Image imageLarge = default;
         [SerializeField] Button button = default;
+        [SerializeField] bool cansay = false;
 
         static class AnimatorHash
         {
@@ -42,13 +43,19 @@ namespace FancyScrollView.Example03
             {
                 animator.Play(AnimatorHash.Scroll, -1, position);
             }
-
             animator.speed = 0;
         }
 
+        public void ChangeThis()
+        {
+            if (currentPosition == 0.5f)
+            {
+                
+            }
+        }
         // GameObject が非アクティブになると Animator がリセットされてしまうため
         // 現在位置を保持しておいて OnEnable のタイミングで現在位置を再設定します
-        float currentPosition = 0;
+        public float currentPosition = 0;
 
         void OnEnable() => UpdatePosition(currentPosition);
     }

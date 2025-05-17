@@ -229,9 +229,9 @@ public class PrometeoCarController : MonoBehaviour
           }
         }
 
-        if(useSounds){
+        if(useSounds&& MusicSwtch.music){
           InvokeRepeating("CarSounds", 0f, 0.1f);
-        }else if(!useSounds){
+        }else if(!useSounds&& !MusicSwtch.music){
           if(carEngineSound != null){
             carEngineSound.Stop();
           }
@@ -429,7 +429,7 @@ public class PrometeoCarController : MonoBehaviour
     // Apart from that, the tireScreechSound will play whenever the car starts drifting or losing traction.
     public void CarSounds(){
 
-      if(useSounds){
+      if(useSounds&& MusicSwtch.music){
         try{
           if(carEngineSound != null){
             float engineSoundPitch = initialCarEngineSoundPitch + (Mathf.Abs(carRigidbody.linearVelocity.magnitude) / 25f);
@@ -445,7 +445,7 @@ public class PrometeoCarController : MonoBehaviour
         }catch(Exception ex){
           Debug.LogWarning(ex);
         }
-      }else if(!useSounds){
+      }else if(!useSounds&& !MusicSwtch.music){
         if(carEngineSound != null && carEngineSound.isPlaying){
           carEngineSound.Stop();
         }

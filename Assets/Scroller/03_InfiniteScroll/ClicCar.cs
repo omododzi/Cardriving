@@ -11,10 +11,13 @@ public class ClicCar : MonoBehaviour
    {
       cell = GetComponentInParent<Cell>();
    }
-   public void OnClick()
+   public void OnClickThis()
    {
-      index = cell.Index;
-      carchanged[index] = true;
-      SceneManager.LoadScene("ChangeMap");
+      if (cell.currentPosition >= 0.48f)
+      {
+         index = cell.Index;
+         carchanged[index] = true;
+         SceneManager.LoadScene("ChangeMap");
+      }
    }
 }

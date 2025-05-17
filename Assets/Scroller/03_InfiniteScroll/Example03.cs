@@ -17,14 +17,15 @@ namespace FancyScrollView.Example03
         [SerializeField]Sprite[] icons ; // Для Image
         [SerializeField]Sprite[] pages ; // Для Page
         [SerializeField] public string[] names;
+        [SerializeField] Sprite descriptions;
 
         void Start()
         {
             var items = Enumerable.Range(0, 29)
                 .Select(i => new ItemData(
-                        names[i % icons.Length], 
-                    icons[i % icons.Length],
-                    pages[i % pages.Length]))
+                    names[i % icons.Length], 
+                descriptions,
+                pages[i % pages.Length]))
                 .ToArray();
 
             scrollView.UpdateData(items);

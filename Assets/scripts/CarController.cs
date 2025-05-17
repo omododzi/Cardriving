@@ -68,7 +68,7 @@ float initialCarEngineSoundPitch; // Used to store the initial pitch of the car 
 
     void Start()
     {
-        if(carEngineSound != null){
+        if(carEngineSound != null&& MusicSwtch.music){
             initialCarEngineSoundPitch = carEngineSound.pitch;
         }
         carRigidbody = GetComponent<Rigidbody>();
@@ -284,7 +284,7 @@ float initialCarEngineSoundPitch; // Used to store the initial pitch of the car 
     }
     public void CarSounds()
     {
-        if(carEngineSound != null)
+        if(carEngineSound != null && MusicSwtch.music)
         {
             float engineSoundPitch = initialCarEngineSoundPitch + (Mathf.Abs(carRigidbody.linearVelocity.magnitude) / 25f);
             carEngineSound.pitch = engineSoundPitch;
@@ -295,7 +295,7 @@ float initialCarEngineSoundPitch; // Used to store the initial pitch of the car 
             }
         }
 
-        if(tireScreechSound != null)
+        if(tireScreechSound != null&& MusicSwtch.music)
         {
             if((isDrifting) || (isTractionLocked && Mathf.Abs(carSpeed) > 12f))
             {

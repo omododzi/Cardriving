@@ -6,13 +6,14 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 namespace FancyScrollView.Example06
 {
     class Tab : FancyCell<ItemData, Context>
     {
         [SerializeField] Animator animator = default;
-        [SerializeField] Text message = default;
         [SerializeField] Button button = default;
 
         static class AnimatorHash
@@ -27,7 +28,7 @@ namespace FancyScrollView.Example06
 
         public override void UpdateContent(ItemData itemData)
         {
-            message.text = itemData.Message;
+            //message.text = itemData.Message;
         }
 
         public override void UpdatePosition(float position)
@@ -40,6 +41,32 @@ namespace FancyScrollView.Example06
             }
 
             animator.speed = 0;
+        }
+
+        public void ChangeThis()
+        {
+            if (currentPosition == 0.5f)
+            {
+                GameObject window = GameObject.FindWithTag("Windows");
+                switch (window.name)
+                {
+                    case "Window1":
+                    {
+                        SceneManager.LoadScene("Map1");
+                        break;
+                    }
+                    case "Window2":
+                    {
+                        SceneManager.LoadScene("Map2");
+                        break;
+                    }
+                    case "Window3":
+                    {
+                        SceneManager.LoadScene("Map3");
+                        break;
+                    }
+                }
+            }
         }
 
         // GameObject が非アクティブになると Animator がリセットされてしまうため
