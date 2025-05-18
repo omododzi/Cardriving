@@ -15,6 +15,7 @@ namespace FancyScrollView.Example06
     {
         [SerializeField] Animator animator = default;
         [SerializeField] Button button = default;
+        [SerializeField] Text message = default;
 
         static class AnimatorHash
         {
@@ -28,7 +29,7 @@ namespace FancyScrollView.Example06
 
         public override void UpdateContent(ItemData itemData)
         {
-            //message.text = itemData.Message;
+            message.text = itemData.Message;
         }
 
         public override void UpdatePosition(float position)

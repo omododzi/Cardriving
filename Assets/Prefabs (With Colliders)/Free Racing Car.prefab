@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 2378779288802949355}
   - component: {fileID: 3424211722008800766}
   - component: {fileID: 527923135033434090}
+  - component: {fileID: -332120376320756737}
   m_Layer: 0
   m_Name: Free Racing Car
   m_TagString: Player
@@ -819,12 +820,7 @@ MonoBehaviour:
   steeringSpeed: 0.21
   brakeForce: 349
   decelerationMultiplier: 9
-  handbrakeDriftMultiplier: 2
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 5
   frontLeftCollider: {fileID: 4795950753765878369}
   frontRightCollider: {fileID: 2716459193614891142}
@@ -840,6 +836,22 @@ MonoBehaviour:
   RRWTireSkid: {fileID: 3093499223304886446}
   carEngineSound: {fileID: 2610410443221198575}
   tireScreechSound: {fileID: 2017860582769495538}
+--- !u!114 &-332120376320756737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311311803080157842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &3962000127133956386
 GameObject:
   m_ObjectHideFlags: 0

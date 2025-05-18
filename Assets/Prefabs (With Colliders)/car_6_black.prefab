@@ -650,6 +650,7 @@ GameObject:
   - component: {fileID: 5285174987729393548}
   - component: {fileID: 7865982132094735752}
   - component: {fileID: 540879119577548321}
+  - component: {fileID: 5920912955164201477}
   m_Layer: 0
   m_Name: car_6_black
   m_TagString: Player
@@ -736,12 +737,7 @@ MonoBehaviour:
   steeringSpeed: 1.5
   brakeForce: 2000
   decelerationMultiplier: 15
-  handbrakeDriftMultiplier: 10
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 2
   frontLeftCollider: {fileID: 6125702631034816493}
   frontRightCollider: {fileID: 6125702630734240663}
@@ -757,6 +753,22 @@ MonoBehaviour:
   RRWTireSkid: {fileID: 1734318584762768122}
   carEngineSound: {fileID: 6453656294770589103}
   tireScreechSound: {fileID: 7304158008809043042}
+--- !u!114 &5920912955164201477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285174987729393547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &6125702629828687938
 GameObject:
   m_ObjectHideFlags: 0

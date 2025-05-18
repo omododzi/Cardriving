@@ -702,6 +702,7 @@ GameObject:
   - component: {fileID: 6611027929648461398}
   - component: {fileID: 4330804271798994506}
   - component: {fileID: 574732554548533721}
+  - component: {fileID: 7720567963083393668}
   m_Layer: 0
   m_Name: F1
   m_TagString: Player
@@ -780,12 +781,7 @@ MonoBehaviour:
   steeringSpeed: 1.5
   brakeForce: 2000
   decelerationMultiplier: 15
-  handbrakeDriftMultiplier: 10
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 2
   frontLeftCollider: {fileID: 3736001863713713103}
   frontRightCollider: {fileID: 4068023645701767023}
@@ -861,6 +857,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.47, z: 3.31}
   m_Center: {x: 0, y: 0.36, z: 0}
+--- !u!114 &7720567963083393668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &149366050491610900
 GameObject:
   m_ObjectHideFlags: 0

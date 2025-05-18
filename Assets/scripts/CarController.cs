@@ -15,16 +15,9 @@ public class CarController : MonoBehaviour
 // === Настройки торможения ===
 [Range(100, 5000)] public int brakeForce = 2000;      // Сила торможения
 [Range(1, 20)] public int decelerationMultiplier = 15; // Множитель замедления
-[Range(1, 20)] public int handbrakeDriftMultiplier = 10; // Множитель заноса при ручнике
 
 // === Центр масс ===
 public Vector3 bodyMassCenter = new Vector3(0, 0.1f, -0.2f); // Смещение центра масс
-
-// === Система запуска ===
-public float launchRPM = 5000f;         // Обороты для запуска
-public float launchTorqueBoost = 3f;    // Усиление крутящего момента при старте
-public float launchDuration = 0.5f;     // Длительность режима запуска
-public float launchImpulseForce = 10000f; // Импульсная сила при старте
 
 // === Настройки торможения ===
 [Range(0.1f, 5f)] public float brakeSmoothing = 2f; // Плавность торможения
@@ -79,7 +72,6 @@ float initialCarEngineSoundPitch; // Used to store the initial pitch of the car 
         
         // Увеличенное сцепление для лучшего разгона
         IncreaseGrip();
-        InvokeRepeating("CarSounds", 0f, 0.1f);
     }
 
     void SetupSuspension(float distance, float spring, float damper)
@@ -123,6 +115,7 @@ float initialCarEngineSoundPitch; // Used to store the initial pitch of the car 
         ApplySteering();
         AnimateWheelMeshes();
         DriftCarPS();
+        HandleCarSounds();
     }
    
     private bool isBraking = false;
@@ -282,34 +275,32 @@ float initialCarEngineSoundPitch; // Used to store the initial pitch of the car 
             Debug.LogWarning(ex);
         }
     }
-    public void CarSounds()
+    void HandleCarSounds()
     {
-        if(carEngineSound != null && MusicSwtch.music)
+        if (carEngineSound != null && MusicSwtch.music)
         {
             float engineSoundPitch = initialCarEngineSoundPitch + (Mathf.Abs(carRigidbody.linearVelocity.magnitude) / 25f);
             carEngineSound.pitch = engineSoundPitch;
-        
-            if(!carEngineSound.isPlaying)
+
+            if (!carEngineSound.isPlaying)
             {
                 carEngineSound.Play();
             }
         }
 
-        if(tireScreechSound != null&& MusicSwtch.music)
+        if (tireScreechSound != null && MusicSwtch.music)
         {
-            if((isDrifting) || (isTractionLocked && Mathf.Abs(carSpeed) > 12f))
+            bool shouldPlayScreech = (isDrifting || (isTractionLocked && Mathf.Abs(carSpeed) > 12f));
+        
+            if (shouldPlayScreech)
             {
-                if(!tireScreechSound.isPlaying)
-                {
+                if (!tireScreechSound.isPlaying)
                     tireScreechSound.Play();
-                }
             }
             else
             {
-                if(tireScreechSound.isPlaying)
-                {
-                    tireScreechSound.Stop();
-                }
+                if (tireScreechSound.isPlaying)
+                    tireScreechSound.Stop(); // Немедленная остановка
             }
         }
     }

@@ -789,6 +789,7 @@ GameObject:
   - component: {fileID: 6352616002136992154}
   - component: {fileID: 3658198848331374194}
   - component: {fileID: 9169158978633741439}
+  - component: {fileID: 1581336647645675983}
   m_Layer: 0
   m_Name: van_1_black
   m_TagString: Player
@@ -863,12 +864,7 @@ MonoBehaviour:
   steeringSpeed: 1.5
   brakeForce: 2000
   decelerationMultiplier: 15
-  handbrakeDriftMultiplier: 10
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 2
   frontLeftCollider: {fileID: 5075458014630988464}
   frontRightCollider: {fileID: 5075458013856372446}
@@ -896,6 +892,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd6f8e78da29e6439993ad652d43aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1581336647645675983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352616002136992155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &6493994769940018822
 GameObject:
   m_ObjectHideFlags: 0

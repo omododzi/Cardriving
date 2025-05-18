@@ -46,13 +46,7 @@ namespace FancyScrollView.Example03
             animator.speed = 0;
         }
 
-        public void ChangeThis()
-        {
-            if (currentPosition == 0.5f)
-            {
-                
-            }
-        }
+       
         // GameObject が非アクティブになると Animator がリセットされてしまうため
         // 現在位置を保持しておいて OnEnable のタイミングで現在位置を再設定します
         public float currentPosition = 0;

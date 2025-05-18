@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 5579705432650784930}
   - component: {fileID: 4825246488105843905}
   - component: {fileID: 2891703219558720471}
+  - component: {fileID: -5933437905844207583}
   m_Layer: 0
   m_Name: Ice Cream Car
   m_TagString: Player
@@ -231,12 +232,7 @@ MonoBehaviour:
   steeringSpeed: 1.5
   brakeForce: 2000
   decelerationMultiplier: 15
-  handbrakeDriftMultiplier: 10
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 2
   frontLeftCollider: {fileID: 2020734875423995813}
   frontRightCollider: {fileID: 6283898878113447860}
@@ -273,6 +269,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.19, y: 2.68, z: 7.25}
   m_Center: {x: 0, y: 2.28, z: 2.1510165e-15}
+--- !u!114 &-5933437905844207583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289069990132619665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &1581637878600751939
 GameObject:
   m_ObjectHideFlags: 0

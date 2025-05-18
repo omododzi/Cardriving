@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 2108181235346707837}
   - component: {fileID: 290499476099613371}
   - component: {fileID: 1375028978130402672}
+  - component: {fileID: -5446014319375491303}
   m_Layer: 0
   m_Name: kozak_i_van
   m_TagString: Player
@@ -374,12 +375,7 @@ MonoBehaviour:
   steeringSpeed: 1.5
   brakeForce: 2000
   decelerationMultiplier: 15
-  handbrakeDriftMultiplier: 10
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 2
   frontLeftCollider: {fileID: 3161540250653491065}
   frontRightCollider: {fileID: 6246964761978403511}
@@ -395,6 +391,22 @@ MonoBehaviour:
   RRWTireSkid: {fileID: 8259675802779001721}
   carEngineSound: {fileID: 1276816037666294762}
   tireScreechSound: {fileID: 3737792574228680218}
+--- !u!114 &-5446014319375491303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298527340143751871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &4670968515013178944
 GameObject:
   m_ObjectHideFlags: 0

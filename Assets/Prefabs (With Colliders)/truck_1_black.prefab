@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 605829141515277774}
   - component: {fileID: 8269330377598457169}
   - component: {fileID: 7671444440684954546}
+  - component: {fileID: 2960239094533331673}
   m_Layer: 0
   m_Name: truck_1_black
   m_TagString: Player
@@ -121,12 +122,7 @@ MonoBehaviour:
   steeringSpeed: 1.5
   brakeForce: 2000
   decelerationMultiplier: 15
-  handbrakeDriftMultiplier: 10
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 2
   frontLeftCollider: {fileID: 7706255182392883394}
   frontRightCollider: {fileID: 1944377112345660927}
@@ -154,6 +150,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd6f8e78da29e6439993ad652d43aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2960239094533331673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605829141515277775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &1007491693341785945
 GameObject:
   m_ObjectHideFlags: 0

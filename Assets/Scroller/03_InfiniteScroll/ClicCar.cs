@@ -13,11 +13,12 @@ public class ClicCar : MonoBehaviour
    }
    public void OnClickThis()
    {
-      if (cell.currentPosition >= 0.48f)
+      if (cell.currentPosition >= 0.48f && cell.currentPosition <= 0.6f)
       {
          index = cell.Index;
          carchanged[index] = true;
          SceneManager.LoadScene("ChangeMap");
+         
       }
    }
 }

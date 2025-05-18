@@ -581,6 +581,7 @@ GameObject:
   - component: {fileID: 5352112619491041861}
   - component: {fileID: 5328356804594044030}
   - component: {fileID: 3406885387631740782}
+  - component: {fileID: 5177878424674858709}
   m_Layer: 0
   m_Name: bus_1_yellow
   m_TagString: Player
@@ -655,12 +656,7 @@ MonoBehaviour:
   steeringSpeed: 1.5
   brakeForce: 2000
   decelerationMultiplier: 15
-  handbrakeDriftMultiplier: 10
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 2
   frontLeftCollider: {fileID: 5082294329332433199}
   frontRightCollider: {fileID: 5082294328980819701}
@@ -688,6 +684,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd6f8e78da29e6439993ad652d43aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5177878424674858709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352112619491041860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &5569638304846667585
 GameObject:
   m_ObjectHideFlags: 0

@@ -1205,6 +1205,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 14c43b5cc392bbb469a303c6689e3364, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3578310785346382612}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 14c43b5cc392bbb469a303c6689e3364, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -336001332302913862}
     - targetCorrespondingSourceObject: {fileID: 8258331853669530860, guid: 14c43b5cc392bbb469a303c6689e3364, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4441552695553530645}
@@ -1295,12 +1298,7 @@ MonoBehaviour:
   steeringSpeed: 1.5
   brakeForce: 2000
   decelerationMultiplier: 15
-  handbrakeDriftMultiplier: 10
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 2
   frontLeftCollider: {fileID: 3657167794230234860}
   frontRightCollider: {fileID: 1629260968980727111}
@@ -1343,6 +1341,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-336001332302913862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5650309125579995517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &6293590589332932593 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1585219431870792669, guid: 14c43b5cc392bbb469a303c6689e3364, type: 3}

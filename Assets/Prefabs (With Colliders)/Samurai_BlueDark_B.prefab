@@ -452,6 +452,7 @@ GameObject:
   - component: {fileID: -2178614490650513168}
   - component: {fileID: 606490328989760090}
   - component: {fileID: 2156640048108978188}
+  - component: {fileID: 5207814473340983262}
   m_Layer: 0
   m_Name: Samurai_BlueDark_B
   m_TagString: Player
@@ -537,12 +538,7 @@ MonoBehaviour:
   steeringSpeed: 1.5
   brakeForce: 2000
   decelerationMultiplier: 15
-  handbrakeDriftMultiplier: 10
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 2
   frontLeftCollider: {fileID: 643436772051291040}
   frontRightCollider: {fileID: 3826889084247440188}
@@ -558,6 +554,22 @@ MonoBehaviour:
   RRWTireSkid: {fileID: 4885377070918024688}
   carEngineSound: {fileID: 1088269975811911827}
   tireScreechSound: {fileID: 7367192932799080512}
+--- !u!114 &5207814473340983262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3225874551983908691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &3247720090280583144
 GameObject:
   m_ObjectHideFlags: 0

@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 1414188723601092286}
   - component: {fileID: 663304858389607137}
   - component: {fileID: 865110047065459937}
+  - component: {fileID: -5035251160431629821}
   m_Layer: 0
   m_Name: "Caff\xE8 Car"
   m_TagString: Player
@@ -424,12 +425,7 @@ MonoBehaviour:
   steeringSpeed: 1.5
   brakeForce: 2000
   decelerationMultiplier: 15
-  handbrakeDriftMultiplier: 10
   bodyMassCenter: {x: 0, y: 0.1, z: -0.2}
-  launchRPM: 5000
-  launchTorqueBoost: 3
-  launchDuration: 0.5
-  launchImpulseForce: 10000
   brakeSmoothing: 2
   frontLeftCollider: {fileID: 3059678119447252976}
   frontRightCollider: {fileID: 3109947676011384756}
@@ -445,6 +441,22 @@ MonoBehaviour:
   RRWTireSkid: {fileID: 5433026446228329849}
   carEngineSound: {fileID: 7911229243188941294}
   tireScreechSound: {fileID: 4115071257049003140}
+--- !u!114 &-5035251160431629821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713873466844708026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1ccf272804eb49a686c582f6543fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabilizationForce: 1
+  maxAngle: 45
+  stabilizationDelay: 0.2
+  usePhysicsBased: 1
 --- !u!1 &1761507283911520799
 GameObject:
   m_ObjectHideFlags: 0
