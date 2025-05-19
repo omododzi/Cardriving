@@ -1,9 +1,16 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
+
 public class Cartrigger : MonoBehaviour
 {
     public static int map;
+
+    void Awake()
+    {
+        map = YandexGame.savesData.lastmap;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Floor"))

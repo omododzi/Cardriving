@@ -7,6 +7,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using YG;
 
 
 namespace FancyScrollView.Example06
@@ -54,18 +55,21 @@ namespace FancyScrollView.Example06
                     case "Window1":
                     {
                         Cartrigger.map = 1;
+                        YandexGame.savesData.lastmap = 1;
                         SceneManager.LoadScene("Map1");
                         break;
                     }
                     case "Window2":
                     {
                         Cartrigger.map = 2;
+                        YandexGame.savesData.lastmap = 2;
                         SceneManager.LoadScene("Map2");
                         break;
                     }
                     case "Window3":
                     {
                         Cartrigger.map = 3;
+                        YandexGame.savesData.lastmap = 3;
                         SceneManager.LoadScene("Map3");
                         break;
                     }
