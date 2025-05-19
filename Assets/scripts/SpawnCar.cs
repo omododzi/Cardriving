@@ -19,6 +19,7 @@ public class SpawnCar : MonoBehaviour
     {
         SceneManager.LoadScene("ChangeCar");
         Cartrigger.map = 0;
+        YandexGame.savesData.lastmap = 0;
         StartCoroutine(Reclama());
     }
 
