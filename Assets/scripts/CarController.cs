@@ -277,6 +277,7 @@ float initialCarEngineSoundPitch; // Used to store the initial pitch of the car 
     }
     void HandleCarSounds()
     {
+        // Обработка звука двигателя
         if (carEngineSound != null && MusicSwtch.music)
         {
             float engineSoundPitch = initialCarEngineSoundPitch + (Mathf.Abs(carRigidbody.linearVelocity.magnitude) / 25f);
@@ -287,21 +288,37 @@ float initialCarEngineSoundPitch; // Used to store the initial pitch of the car 
                 carEngineSound.Play();
             }
         }
+        else if (carEngineSound != null && carEngineSound.isPlaying)
+        {
+            carEngineSound.Stop(); // Остановка, если музыка выключена
+        }
 
+        // Обработка звука скрипа шин
         if (tireScreechSound != null && MusicSwtch.music)
         {
             bool shouldPlayScreech = (isDrifting || (isTractionLocked && Mathf.Abs(carSpeed) > 12f));
-        
+    
             if (shouldPlayScreech)
             {
                 if (!tireScreechSound.isPlaying)
+                {
                     tireScreechSound.Play();
+                }
             }
             else
             {
+                // Мгновенная остановка с обнулением позиции
                 if (tireScreechSound.isPlaying)
-                    tireScreechSound.Stop(); // Немедленная остановка
+                {
+                    tireScreechSound.Stop();
+                    tireScreechSound.time = 0f; // Сброс позиции воспроизведения
+                }
             }
+        }
+        else if (tireScreechSound != null && tireScreechSound.isPlaying)
+        {
+            tireScreechSound.Stop();
+            tireScreechSound.time = 0f;
         }
     }
 

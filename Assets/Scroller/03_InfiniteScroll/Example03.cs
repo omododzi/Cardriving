@@ -23,21 +23,36 @@ namespace FancyScrollView.Example03
 
         void Start()
         {
-            if (YandexGame.savesData.language == "en")
+            
+
+            // Нормализация языка (на случай "En" vs "en")
+            string language = YandexGame.EnvironmentData.language.ToLower();
+            if (YandexGame.EnvironmentData.language == "En"|| YandexGame.EnvironmentData.language == "en"||YandexGame.savesData.language == "en")
             {
-                  var items = Enumerable.Range(0, 29)
-                                .Select(i => new ItemData(
-                                    namesEN[i % icons.Length], 
-                                descriptions,
-                                pages[i % pages.Length]))
-                                .ToArray();
-                  scrollView.UpdateData(items);
-                  scrollView.SelectCell(0);
-            }else if (YandexGame.savesData.language == "ru")
+                var items = Enumerable.Range(0, 29)
+                    .Select(i => new ItemData(
+                        namesEN[i % icons.Length], 
+                        descriptions,
+                        pages[i % pages.Length]))
+                    .ToArray();
+                scrollView.UpdateData(items);
+                scrollView.SelectCell(0);
+            }else if (YandexGame.EnvironmentData.language == "Ru"|| YandexGame.EnvironmentData.language == "ru"||YandexGame.savesData.language == "ru")
             {
                 var items = Enumerable.Range(0, 29)
                     .Select(i => new ItemData(
                         namesRU[i % icons.Length], 
+                        descriptions,
+                        pages[i % pages.Length]))
+                    .ToArray();
+                scrollView.UpdateData(items);
+                scrollView.SelectCell(0);
+            }
+            else
+            {
+                var items = Enumerable.Range(0, 29)
+                    .Select(i => new ItemData(
+                        namesEN[i % icons.Length], 
                         descriptions,
                         pages[i % pages.Length]))
                     .ToArray();
