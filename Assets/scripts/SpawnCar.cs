@@ -15,10 +15,15 @@ public class SpawnCar : MonoBehaviour
         Instantiate(spawnCars[YandexGame.savesData.lastcar], spawnpos.position, spawnpos.rotation);
     }
 
-    public IEnumerator ResetCar()
+    public void ResetCar()
     {
         SceneManager.LoadScene("ChangeCar");
         Cartrigger.map = 0;
+        StartCoroutine(Reclama());
+    }
+
+    private IEnumerator Reclama()
+    {
         yield return new WaitForSeconds(0.3f);
         Ygadd.TryShowFullscreenAdWithChance(101);
     }
